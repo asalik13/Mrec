@@ -165,6 +165,6 @@ def predict(new_ratings, _id):
     movieList = utils.loadMovieList()
 
     ix = np.argsort(my_predictions)[::-1]
-    return ix,my_predictions
+    return ix[20:],my_predictions
 
 # In[94]:

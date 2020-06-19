@@ -64,9 +64,13 @@ export default function Movie(props) {
     }
   })(Rating);
 
+  if(imageLink.substr(imageLink.length - 4)==null){
+    return null
+  }
+
   return (
     <div style={movieStyle}>
-  
+
       <div style={imageStyle} className="image"></div>
       {props.rating?(<StyledRating
         defaultValue={0}
