@@ -52,7 +52,7 @@ export default function Layout() {
 
   function getRecommended() {
     setLoading(true);
-    axios.post("http://mrec.herokuapp.com/addratings", ratings).then(res => {
+    axios.post("https://mrec.herokuapp.com/addratings", ratings).then(res => {
       setRecommended(res.data.r);
       setLoading(false);
       console.log(res.data.r);
@@ -60,7 +60,7 @@ export default function Layout() {
   }
 
   useEffect(() => {
-    axios.get("http://mrec.herokuapp.com/movielist").then(res => {
+    axios.get("https://mrec.herokuapp.com/movielist").then(res => {
       setList(res.data.a);
       setLoading(false);
     });
