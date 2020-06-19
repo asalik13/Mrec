@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import Movie from "./Movie";
 
-export default function Layout(props) {
+export default function Rate(props) {
   const [list, setList] = useState(props.list);
   const [ratings, setRatings] = useState({});
   const [num, setNum] = useState(0);
@@ -20,6 +20,7 @@ export default function Layout(props) {
               key={num + index}
               id={num + index}
               rating={true}
+              value = {props.ratings[num+index]}
               changeRating={props.changeRating}
             />
           ))

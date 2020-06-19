@@ -64,7 +64,7 @@ export default function Movie(props) {
     }
   })(Rating);
 
-  if(imageLink.substr(imageLink.length - 4)==null){
+  if(imageLink.substr(imageLink.length - 5)=="null)"){
     return null
   }
 
@@ -75,9 +75,8 @@ export default function Movie(props) {
       {props.rating?(<StyledRating
         defaultValue={0}
         precision={0.5}
-        value={value}
+        value={props.value}
         onChange={(event, newValue) => {
-          setValue(newValue);
           props.changeRating(props.id,newValue)
         }}
 

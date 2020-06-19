@@ -52,7 +52,7 @@ export default function Layout() {
 
   function getRecommended() {
     setLoading(true);
-    axios.post("/addratings", ratings).then(res => {
+    axios.post("http://localhost:8000/addratings", ratings).then(res => {
       setRecommended(res.data.r);
       setLoading(false);
       console.log(res.data.r);
@@ -60,7 +60,7 @@ export default function Layout() {
   }
 
   useEffect(() => {
-    axios.get("/movielist").then(res => {
+    axios.get("http://localhost:8000/movielist").then(res => {
       setList(res.data.a);
       setLoading(false);
     });
@@ -101,7 +101,7 @@ export default function Layout() {
               </Button>
             </Toolbar>
           </AppBar>
-          <Rate changeRating={changeRating} list={list} />
+          <Rate changeRating={changeRating} list={list} ratings={ratings}/>
         </div>
       );
     } else if(status=="recommended"){
