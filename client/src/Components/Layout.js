@@ -52,7 +52,7 @@ export default function Layout() {
 
   function getRecommended() {
     setLoading(true);
-    axios.post("http://localhost:8000/addratings", ratings).then(res => {
+    axios.post("/addratings", ratings).then(res => {
       setRecommended(res.data.r);
       setLoading(false);
       console.log(res.data.r);
@@ -60,7 +60,7 @@ export default function Layout() {
   }
 
   useEffect(() => {
-    axios.get("http://localhost:8000/movielist").then(res => {
+    axios.get("/movielist").then(res => {
       setList(res.data.a);
       setLoading(false);
     });
