@@ -49,7 +49,7 @@ def loadMovieList():
     """
     # Read the fixed movieulary list
     movieList=[]
-    with open('Data/movie_titles.txt', 'r') as f:
+    with open('./Data/movie_titles.txt', 'r') as f:
         for line in f:
             movieList.append(line[:-1])
     return movieList
@@ -206,5 +206,3 @@ def visualizeFit(X, mu, sigma2):
 
     if np.all(abs(Z) != np.inf):
         pyplot.contour(X1, X2, Z, levels=10**(np.arange(-20., 1, 3)), zorder=100)
-
-
